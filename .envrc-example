@@ -1,4 +1,5 @@
 source ".venv/bin/activate"
-export POSTGRES_USER=username
-export POSTGRES_PASSWORD=password
-export POSTGRES_DB=db_name
+export POSTGRES_USER="anne-droid"
+export POSTGRES_PASSWORD="password"
+export POSTGRES_DB="bitetrack-db"
+### use flake ## defer until further debugging
