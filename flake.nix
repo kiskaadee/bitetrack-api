@@ -24,8 +24,7 @@
           ];
       in {
         devShells.default = pkgs.mkShell {
-          packages = [ pkgs.uv ];
-          env.LD_LIBRARY_PATH = pkgs.lib.makeLibraryPath libs;
+          packages = with pkgs; [ uv ruff];
         };
       });
 }
