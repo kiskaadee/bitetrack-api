@@ -4,6 +4,7 @@ router = APIRouter()
 
 
 # health check
-@router.get("/")
+@router.get("/health")
+@router.get("/healthz")
 async def health():
     return {"message": "Server is healthy!"}
