@@ -13,15 +13,7 @@
       flake-utils.lib.eachDefaultSystem (system:
       let
         pkgs = nixpkgs.legacyPackages.${system};
-        libs = with pkgs;
-          [
-            stdenv.cc.cc.lib  # provides libstdc++ and libgcc_s
-            glibc             # GNU C library - system calls, malloc, I/O processing
-            zlib              # Compression library used extensively by Python's standard
-            libffi            # Foreign-function-interface: calling conventions -> this allows code written in one language to call code written in another language
-            openssl           # Cryptography and secure communication; required by Python's ssl module and networking packages such as `request`, `httpx` or `urllib3`
-            postgresql        # Provides libpq.so required by psycopg / asyncpg
-          ];
+       
       in {
         devShells.default = pkgs.mkShell {
           packages = with pkgs; [ uv ruff];
