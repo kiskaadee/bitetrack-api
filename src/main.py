@@ -1,6 +1,6 @@
 from fastapi import FastAPI
 
-from routers import router, system_router
+from src.routers import router, system_router
 
 
 def create_app() -> FastAPI:
