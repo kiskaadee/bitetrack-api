@@ -7,7 +7,11 @@ erDiagram
 
 USER {
     uuid id PK
+    string nickname UK
     string email UK
+    string firstname
+    string lastname
+    date dob
     string password_hash
     string role
     boolean is_active
@@ -16,7 +20,8 @@ USER {
 
 CUSTOMER {
     uuid id PK
-    string name
+    string firstname
+    string lastname
     string phone
     string email
     datetime created_at

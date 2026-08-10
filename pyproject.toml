@@ -6,10 +6,17 @@ readme = "README.md"
 requires-python = ">=3.13"
 dependencies = [
     "fastapi[standard]>=0.138.2",
+    "httpx2>=2.10.0",
     "pytest>=9.1.1",
 ]
 
 [dependency-groups]
 dev = [
     "pyright>=1.1.411",
+]
+
+[tool.pytest.ini_options]
+pythonpath = ["."]
+filterwarnings = [
+    "ignore::DeprecationWarning",
 ]
