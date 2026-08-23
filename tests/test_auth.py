@@ -1,4 +1,5 @@
 from fastapi.testclient import TestClient
+
 from src.main import app
 
 client = TestClient(app)
@@ -23,7 +24,7 @@ def test_register_user_success():
     assert response.status_code == 201
     # Parse JSON response body
     data = response.json()
-    expected_fields = ["id", "nickname", "firstname", "lastname", "dob", "role", "created_at"]
+    expected_fields = ["id", "nickname", "firstname", "lastname", "dob", "role", "modified_at"]
     for field in expected_fields:
         assert field in data, f"Attribute '{field}' missing from user data."
     assert data["email"] == "staff@bitetrack.com", f"Expected email: staff@bitetrack.com, got: {data['email']}"

@@ -1,8 +1,10 @@
-from datetime import datetime
 import uuid
+from datetime import UTC, datetime
+
+from fastapi import APIRouter
 
 from src.schemas.users import UserRegister, UserResponse
-from fastapi import APIRouter
+
 router = APIRouter()
 
 # TODO: Implement POST /register
@@ -13,7 +15,7 @@ router = APIRouter()
 def new_user(user_data: UserRegister, session="session"):
     print(f"Used {session}")
     # process password, insert to database
-    return UserResponse(id=uuid.uuid4(), created_at=datetime.now(), **user_data.model_dump())
+    return UserResponse(id=uuid.uuid4(), modified_at=datetime.now(tz=UTC), **user_data.model_dump())
 
 
 @router.post("/register", response_model=UserResponse, status_code=201)

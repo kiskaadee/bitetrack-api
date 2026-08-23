@@ -15,7 +15,7 @@ USER {
     string password_hash
     string role
     boolean is_active
-    datetime created_at
+    datetime modified_at
 }
 
 CUSTOMER {
@@ -24,7 +24,7 @@ CUSTOMER {
     string lastname
     string phone
     string email
-    datetime created_at
+    datetime modified_at
 }
 
 CATEGORY {
@@ -48,7 +48,7 @@ SALE {
     uuid customer_id FK
     uuid created_by FK
     decimal total_amount
-    datetime created_at
+    datetime modified_at
 }
 
 SALE_ITEM {
@@ -72,7 +72,7 @@ INVENTORY_LOSS {
     uuid product_id FK
     int quantity
     string reason
-    datetime created_at
+    datetime modified_at
 }
 
 CATEGORY ||--o{ PRODUCT : contains
